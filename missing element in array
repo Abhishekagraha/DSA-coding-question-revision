@@ -1,0 +1,32 @@
+class Solution {
+public:
+
+    int sortfunction(vector<int>& nums){
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<nums.size();i++){
+        if(nums[i]== i) continue;
+        else
+             return i;
+        }
+        return nums.size();
+    }
+    int xorfunction(vector<int>& nums){
+        int ans=0;
+        int n=nums.size();
+        //1. xor all element of array
+        for(int i=0;i<n;i++){
+            ans ^= nums[i];
+        }
+       // 2. xor all the index value
+        for(int i=0;i<=n;i++){
+            ans ^= i;
+        }
+        return ans;
+
+
+    }
+    int missingNumber(vector<int>& nums) {
+        //return sortfunction(nums);
+        return xorfunction(nums);
+    }
+};
